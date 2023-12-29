@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="rviz" default="false" />
+    <include file="$(find fio-main)/launch/fastlio_mapping_ouster.launch">
+	    <param name="rviz" value="$(arg rviz)" />
+    </include>
+</launch>

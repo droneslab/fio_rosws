@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find spot_driver)/launch/driver.launch">
+	<arg name="hostname"  value="10.0.88.176" />
+	<arg name="username"  value="admin" />
+	<arg name="password"  value="DronesLab1!1" />
+  </include>
+  <include file="$(find ouster_ros)/launch/sensor.launch">
+	<arg name="sensor_hostname"  value="os-122212002206.local" />
+	<arg name="viz"  value="false" />
+	<arg name="lidar_mode"  value="512x10" />
+  </include>
+</launch>

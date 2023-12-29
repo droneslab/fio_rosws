@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="rviz" default="false" />
+    <arg name="map" default="/home/spottop/Projects/fio/catkin_ws/src/fast-lio-localization/PCD/scans.pcd" />
+    <include file="$(find fio-main)/launch/fastlio_localization_ouster.launch">
+	    <param name="rviz" value="$(arg rviz)" />
+	    <param name="map" value="$(arg map)" />
+    </include>
+</launch>
