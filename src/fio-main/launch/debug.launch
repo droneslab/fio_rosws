@@ -1,0 +1,19 @@
+
+<launch>
+    <arg name="rviz" default="false" />
+    <include file="$(find fio-main)/launch/bringup.launch" />
+
+    <arg name="mapping_mode" default="0" />
+    <group if="$(arg mapping_mode)">
+        <include file="$(find fio-main)/launch/mapping.launch">
+            <param name="rviz" value="$(arg rviz)" />
+        </include>
+    </group>
+    <group unless="$(arg mapping_mode)">
+        <include file="$(find fio-main)/launch/localization.launch">
+            <param name="rviz" value="$(arg rviz)" />
+        </include>
+    </group>
+
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch" />
+</launch>
